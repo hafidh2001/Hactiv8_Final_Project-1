@@ -1,0 +1,20 @@
+{
+  "name": "final_project_1",
+  "version": "1.0.0",
+  "description": "",
+  "module": "true",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hafidh2001/final_project-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hafidh2001/final_project-1/issues"
+  },
+  "homepage": "https://github.com/hafidh2001/final_project-1#readme"
+}
