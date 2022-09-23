@@ -1,0 +1,40 @@
+ CONFIGURE BASE PROJECT
+
+STEP 1 : make main page + add package.json
+    - touch index.js
+    - npm init || npm init -y (to create package.json)
+
+STEP 2 : make base file project
+    - touch .gitignore (to add files/folders that are not pushed on github)
+    - touch .env (to store confidential data)
+    - touch config.js (to declare the variables in .env)
+    - touch jsconfig.json (not used yet)
+
+STEP 3 : make base folder project
+    - mkdir helpers (to save the global function)
+    - mkdir db (to save the database connection)
+    - mkdir models (to save data that is directly related to the database)
+    - mkdir controllers (to save data that connects the model with the route in every request process from the user[GET, POST, PUT, PATCH, DELETE])
+    - mkdir routes (to save the route for each request made)
+    - mkdir middlewares (to save the boundary / mediator function between the operating system and the application to simplify the integration process.)
+
+STEP 4 : install dependencies to package.json
+    - npm i express
+    - npm i cors
+    - npm i dotenv 
+    - npm i pg 
+    - npm i jsonwebtoken
+
+STEP 5 : install dev-dependencies to package.json
+    - npm i --save-dev nodemon
+
+STEP 6 : setup package.json
+    {
+        "type": "module", (to load ES module)
+        "main": "index.js" (to set the main page)
+        "scripts": {
+            "port-wsl": "lsof -i -P -n | grep LISTEN", (display the running port in linux)
+            "port-win": "netstat -a | grep LISTEN", || "port-win": "netstat -a | grep 8000" (display the running port in windows)
+            "kill-port": "npx kill-port 8000", (kill the running port)
+            "dev": "yes | npx kill-port 8000 && nodemon index.js" (mix command : kill the running port and then run nodemon on the main page)
+    }, (to create commands, how to use : npm run scriptName)
