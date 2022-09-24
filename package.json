@@ -1,7 +1,7 @@
 {
   "name": "final_project_1",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash\r $ git remote -v\r # or\r $ git remote set-url <remote_name> <remote_url> (ex : git remote set-url origin https://github.com/hafidh2001/Hactiv8_Final_Project-1.git)\r ```",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "keywords": []
 }
