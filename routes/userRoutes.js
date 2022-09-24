@@ -1,13 +1,17 @@
 import express from 'express';
-import UserController from '../controllers/UserController';
-import ReflectionController from '../controllers/ReflectionController';
+import { 
+    getAll,
+    register,
+    login,
+} from '../controllers/userController.js';
+// import reflectionController from '../controllers/ReflectionController';
 
-var router = express.Router();
+const router = express.Router();
 
-router.post('/register', );
+router.post('/register', register);
 
-router.post('/login', (req,res) => {
-    console.log('login');
-});
+router.post('/login', login);
+
+
 
 export default router;

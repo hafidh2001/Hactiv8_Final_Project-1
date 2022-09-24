@@ -5,7 +5,7 @@ import express from 'express';
 var router = express.Router();
 
 router.use('/api/v1/users', userRoutes);
-router.use('/api/v1/users', reflectionRoutes);
+router.use('/api/v1/reflection', reflectionRoutes);
 
 
 
