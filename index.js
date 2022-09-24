@@ -8,7 +8,7 @@ import { checkConnection } from "./helpers/connectionDatabase.js";
 const app = express();
 
 // check connection to database
-checkConnection();
+await checkConnection();
 
 // calling the cors method for access API
 app.use(cors());
