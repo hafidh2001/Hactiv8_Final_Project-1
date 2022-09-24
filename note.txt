@@ -7,6 +7,7 @@ STEP 1 : make main page + add package.json
 STEP 2 : make base file project
     - touch .gitignore (to add files/folders that are not pushed on github)
     - touch .env (to store confidential data)
+    - touch .env.example (a copy of the variable declarations in .env)
     - touch config.js (to declare the variables in .env)
     - touch jsconfig.json (not used yet)
 
@@ -36,5 +37,9 @@ STEP 6 : setup package.json
             "port-wsl": "lsof -i -P -n | grep LISTEN", (display the running port in linux)
             "port-win": "netstat -a | grep LISTEN", || "port-win": "netstat -a | grep 8000" (display the running port in windows)
             "kill-port": "npx kill-port 8000", (kill the running port)
-            "dev": "yes | npx kill-port 8000 && nodemon index.js" (mix command : kill the running port and then run nodemon on the main page)
+            "dev": "yes | npx kill-port 8000 && nodemon index.js" (mix command : kill the running port and then run nodemon on the main page <yes : optional>)
     }, (to create commands, how to use : npm run scriptName)
+
+STEP 7 : setup connection db
+    - touch database.js
+    - 
