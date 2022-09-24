@@ -42,4 +42,6 @@ STEP 6 : setup package.json
 
 STEP 7 : setup connection db
     - touch database.js
-    - 
+    - make configuration to database (pg / mysql2 / prisma / sequalize)
+    - create a helper function to check the connection to the database (path : ./helpers/connectionDatabase.js)
+    - call function before use method express().use in index.js (path : ./index.js)
