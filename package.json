@@ -8,7 +8,7 @@
     "port-wsl": "lsof -i -P -n | grep LISTEN",
     "port-win": "netstat -a | grep 8000",
     "kill-port": "npx kill-port 8000",
-    "dev": "yes | npx kill-port 8000 && nodemon index.js"
+    "dev": "npx kill-port 8000 && nodemon index.js"
   },
   "repository": {
     "type": "git",
