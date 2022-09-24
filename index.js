@@ -17,12 +17,7 @@ app.use(cors());
 // calling the express.json() method for parsing
 app.use(express.json());
 
-// calling route
-// app.use("/", (req, res) => {
-//   res.send("Hacktive - final project 1");
-// });
-
-// Routes Index
+// Calling Routes
 app.use(routes);
 
 // declare route
