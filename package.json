@@ -9,7 +9,8 @@
     "port-win": "netstat -a | grep 8000",
     "kill-port": "npx kill-port 8000",
     "dev": "yes | npx kill-port 8000 && nodemon index.js",
-    "migrate": "node migrations/migrate.js"
+    "migrate-create": "node migrations/migrateCreateTable.js",
+    "migrate-drop": "node migrations/migrateDropTable.js"
   },
   "repository": {
     "type": "git",

@@ -1,15 +1,11 @@
+import { showAllAdmins, register } from "../controllers/adminController.js";
 import { Router } from "express";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("Halaman awal admin");
-  console.log("Halaman awal admin");
-});
+router.get("/", showAllAdmins);
 
-router.post("/", (req, res) => {
-  console.log("Halaman post admin");
-});
+router.post("/", register);
 
 router.put("/:id", (req, res) => {
   console.log("Halaman update by id admin");

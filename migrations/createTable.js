@@ -1,4 +1,4 @@
-const dataTable = [];
+const createTable = [];
 
 // query
 const create_admins = `CREATE TABLE IF NOT EXISTS admins
@@ -9,7 +9,7 @@ const create_admins = `CREATE TABLE IF NOT EXISTS admins
     created_date timestamp NOT NULL,
     modified_date timestamp NOT NULL
 );`;
-dataTable.push(create_admins);
+createTable.push(create_admins);
 
 const create_customers = `CREATE TABLE IF NOT EXISTS customers
 (
@@ -19,6 +19,6 @@ const create_customers = `CREATE TABLE IF NOT EXISTS customers
     created_date timestamp NOT NULL,
     modified_date timestamp NOT NULL
 );`;
-dataTable.push(create_customers);
+createTable.push(create_customers);
 
-export default dataTable;
+export default createTable;
