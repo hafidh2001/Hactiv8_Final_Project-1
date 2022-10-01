@@ -19,7 +19,8 @@ const storeUser = async (email, password) => {
             "INSERT INTO users (email, password, created_date, modified_date) VALUES ($1, $2, $3, $4) RETURNING *;",
             [email, hash, date, date]
         );
-        const res = data?.rows;
+        const res = data?.rows[0];
+        delete res.password;
         return {status: "success", res};
     }catch(error){
         return {status: "error", message: error.message};
