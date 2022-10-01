@@ -15,6 +15,7 @@ await checkConnection();
 app.use(cors());
 
 // calling the express.json() method for parsing
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // calling routes

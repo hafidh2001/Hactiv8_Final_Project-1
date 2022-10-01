@@ -1,6 +1,7 @@
 import { Router } from "express";
-import adminRoutes from "./adminRoutes.js";
-import customerRoutes from "./customerRoutes.js";
+import userRoutes from "./userRoutes.js";
+import reflectionRoutes from "./reflectionRoutes.js";
+import { checkCredential } from "../middlewares/checkCredentials.js";
 
 const router = Router();
 
@@ -9,13 +10,8 @@ router.get("/", (req, res) => {
   res.send("Hactive8 - Final Project 1");
 });
 
-router.get("/test", (req, res) => {
-  res.send("Halaman Test");
-  console.log("Halaman Test");
-});
-
 // create same-endpoint
-router.use("/admin", adminRoutes);
-router.use("/customer", customerRoutes);
+router.use("/api/v1/users/", userRoutes);
+router.use("/api/v1/reflections/", checkCredential, reflectionRoutes);
 
 export default router;

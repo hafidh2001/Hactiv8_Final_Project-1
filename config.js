@@ -12,5 +12,6 @@ const database = {
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
 };
+const jwt_secret = process.env.JWT_SECRET;
 
-export { port, database };
+export { port, database, jwt_secret };
