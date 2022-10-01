@@ -1,12 +1,12 @@
-import express from 'express';
+import { Router } from 'express';
 import userRoutes from './userRoutes.js'
-const router = express.Router();
+const router = Router();
 
 
 router.get('/', (req, res) => {
-    console.log(`uhuyy`);
     res.send("hello gais ini halaman home")
 });
+
 router.use('/user', userRoutes);
 
 export default router;
