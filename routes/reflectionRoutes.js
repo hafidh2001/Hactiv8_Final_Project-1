@@ -11,6 +11,6 @@ const router = Router();
 router.post("/", storeUserReflection);
 router.get("/", showUserReflection);
 router.put("/:id", editUserReflection);
-router.delete("/", deleteUserReflection);
+router.delete("/:id", deleteUserReflection);
 
 export default router;

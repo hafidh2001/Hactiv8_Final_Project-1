@@ -1,3 +1,7 @@
+## POSTMAN
+
+[Link to import postman](https://www.getpostman.com/collections/614c10227ce7d60044d6)
+
 ## HOW TO CHECK & SET REMOTE GITHUB ?
 
 ```bash

@@ -43,6 +43,7 @@ export const storeReflection = async (
 
 export const editReflection = async (
   owner_id,
+  reflection_id,
   success,
   low_point,
   take_away
@@ -57,8 +58,8 @@ export const editReflection = async (
     const date_now = new Date();
     const user = await getUserById(owner_id);
     const data = await db.query(
-      `INSERT INTO reflections (owner_id, success, low_point, take_away, created_date, modified_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`,
-      [owner_id, success, low_point, take_away, date_now, date_now]
+      `UPDATE reflections SET success=$3, low_point=$4, take_away=$5, modified_date=$6 WHERE owner_id=$1 AND reflection_id=$2 RETURNING *;`,
+      [owner_id, reflection_id, success, low_point, take_away, date_now]
     );
     const res = data?.rows[0];
     return { status: "success", res, user };
@@ -66,35 +67,19 @@ export const editReflection = async (
     return { status: "error", message: error.message };
   }
 };
-export const deleteReflection = async () => {};
 
-// import db from "../db/database.js";
-// import { getUserById } from "./User.js";
-
-// export const getAllTodos = async () => {
-//   try {
-//     const data = await db.query(`SELECT * FROM todos`);
-//     const resCount = data?.rowCount;
-//     const res = data?.rows;
-//     return { status: "success", count: resCount, res };
-//   } catch (error) {
-//     return { status: "error", message: error.message };
-//   }
-// };
-
-// export const storeList = async (owner_id, list) => {
-//   try {
-//     if (list == null) return { status: "error", message: "list are required" };
-
-//     const date_now = new Date();
-//     const data = await db.query(
-//       `INSERT INTO todos (owner_id, list, created_date, modified_date) VALUES ($1, $2, $3, $4) RETURNING *;`,
-//       [owner_id, list, date_now, date_now]
-//     );
-//     const res = data?.rows[0];
-//     const user = await getUserById(res.owner_id);
-//     return { status: "success", res, user };
-//   } catch (error) {
-//     return { status: "error", message: error.message };
-//   }
-// };
+export const deleteReflection = async (owner_id, reflection_id) => {
+  try {
+    const user = await getUserById(owner_id);
+    const data = await db.query(
+      `DELETE FROM reflections WHERE owner_id=$1 AND reflection_id=$2 RETURNING *;`,
+      [owner_id, reflection_id]
+    );
+    const count = data?.rowCount;
+    const res = data?.rows[0];
+    if (count === 0) return { status: "error", message: "data does not exist" };
+    return { status: "success", res, user };
+  } catch (error) {
+    return { status: "error", message: error.message };
+  }
+};
