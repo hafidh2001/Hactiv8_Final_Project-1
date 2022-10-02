@@ -64,7 +64,9 @@ export const deleteReflection = async (owner_id, reflection_id) => {
           `DELETE FROM reflections WHERE owner_id=$1 AND reflection_id=$2 RETURNING *`,
           [owner_id, reflection_id]
         );
+        const count = data?.rowCount;
         const res = data?.rows[0];
+        if (count === 0 ) return { status: "error", message: "data does not exists" };
         return { status: "success", res, user };
       } catch (error) {
         return { status: "error", message: error.message };
