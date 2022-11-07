@@ -40,7 +40,7 @@ $ npm install (to install dependencies on the project stored in package.json)
 
 ## DOCUMENTATION
 
-[See more documentaion here](./note.txt)
+[See more documentation here](./note.txt)
 
 ## License
 
