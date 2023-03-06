@@ -25,7 +25,7 @@ export const checkCredential = async (req, res, next) => {
       `SELECT user_id, email FROM users WHERE email = $1`,
       [decode.email]
     );
-    // check if user is exist
+    // check if user not exist
     if (user?.rowCount === 0) {
       res.json({ status: "error", message: "authorization failed" });
       return;
